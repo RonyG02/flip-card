@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background:#f5f0ea;
+  margin:0;
+}
+
+.flip-card {
+  width:350px;
+  height:500px;
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.flip-inner {
+  width:100%;
+  height:100%;
+  position:relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.front img, .back img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="flip-card" onclick="this.classList.toggle('flipped')">
+  <div class="flip-inner">
+    <div class="front">
+      <img src="https://drive.google.com/uc?export=view&id=1UqmPnEf7l2M1wNu2LoDfRfG2krjqqXY7">
+    </div>
+    <div class="back">
+      <img src="https://drive.google.com/uc?export=view&id=1oSbK-MSgRiTrprXpSGwcZMKVReKORJdq">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
